@@ -15,7 +15,7 @@
         <h4></h4>
         <div class="input-group">
           <span class="input-group-addon" id="basic-addon1">&nbsp;密&nbsp;码&nbsp;</span>
-          <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" autofocus required>
+          <input type="password" id="pad" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" autofocus required onblur="check()">
         </div>
         <i style="color:#c1c1c1;">*密码必须为8位</i>
         <h4></h4>
@@ -23,8 +23,8 @@
         <button type="submit" class="btn btn-info">register</button>
         <a href="/login" style="color:white;"><button type="button" class="btn btn-info">login</button></a>
 
-
       </form>
+      <script src="/javascripts/check.js" charset="utf-8"></script>
     </div>
   </body>
 </html>

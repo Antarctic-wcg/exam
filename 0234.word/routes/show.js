@@ -26,7 +26,6 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res, next){
 
-  console.log("我在这里",req.session.password);
   if(req.body.password === req.session.password){
     db.user.update(
       {email: req.body.email},
