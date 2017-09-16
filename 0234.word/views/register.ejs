@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include head %>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div style="max-width:350px;margin:0 auto;">
+      <h1><%= title %></h1>
+      <form class="" action="/register" method="post">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">&nbsp;账&nbsp;号&nbsp;</span>
+          <input type="email" name="email" class="form-control" placeholder="Username" value="<%= email %>" aria-describedby="basic-addon1" autofocus required>
+        </div><i style="color:#c1c1c1;">*必须用邮箱作为账号</i>&nbsp;&nbsp;<i style="color:red;"><%= err %></i>
+        <h4></h4>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">&nbsp;密&nbsp;码&nbsp;</span>
+          <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" autofocus required>
+        </div>
+        <i style="color:#c1c1c1;">*密码必须为8位</i>
+        <h4></h4>
+
+        <button type="submit" class="btn btn-info">register</button>
+        <a href="/login" style="color:white;"><button type="button" class="btn btn-info">login</button></a>
+
+
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include head %>
+    <title><%- title %></title>
+    <style media="screen">
+      .tag{
+        height:34px;
+        font-size: 16px;
+      }
+      .tag i{
+        position: relative;
+        top: -4px;
+      }
+      .tag input{
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        margin-top:7px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div style="max-width:350px;margin:0 auto;">
+      <h1><%= title %></h1>
+      <form class="" action="/show" method="post">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">&nbsp;账&nbsp;号&nbsp;</span>
+          <input type="email" name="email" class="form-control" placeholder="Username" value="<%= doc.email %>" aria-describedby="basic-addon1" autofocus required readonly>
+        </div>
+        <h4></h4>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">&nbsp;姓名:&nbsp;</span>
+          <input type="text" name="name" value="<%= doc.name %>" class="form-control" placeholder="Username" value="" aria-describedby="basic-addon1" autofocus required>
+        </div>
+        <h4></h4>
+        <div class="input-group tag">
+          <span class="input-group-addon" id="basic-addon1">&nbsp;性&nbsp;别&nbsp;</span>
+          <input style="margin-left:5%;" type="radio" name="sex" value="男" <%= man %>><i>男</i>&nbsp;
+          <input type="radio" name="sex" value="女" <%= lady %>><i>女</i>
+        </div>
+        <h4></h4>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">&nbsp;年龄:&nbsp;</span>
+          <input type="text" name="age" value="<%= doc.age %>" class="form-control" placeholder="age" value="" aria-describedby="basic-addon1" autofocus required>
+        </div>
+        <h4></h4>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">&nbsp;生日:&nbsp;</span>
+          <input type="date" name="data" value="<%= doc.data %>" class="form-control" placeholder="birthday" value="" aria-describedby="basic-addon1" autofocus required>
+        </div>
+        <h4></h4>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">&nbsp;密&nbsp;码&nbsp;</span>
+          <input type="text" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" value="<%= doc.password %>" autofocus required>
+        </div>
+        <i style="color:#c1c1c1;">*密码必须为8位</i>
+        <h4></h4>
+
+        <button type="submit" class="btn btn-info">update</button>
+
+      </form>
+
+    </div>
+  </body>
+</html>
