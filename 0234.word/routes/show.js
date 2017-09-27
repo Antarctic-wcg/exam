@@ -31,6 +31,7 @@ router.post('/', function(req, res, next){
       {email: req.body.email},
       {$set: req.body}, function(err){
         console.log(err);
+        res.redirect('/show');
       }
     );
   }else {
@@ -40,13 +41,13 @@ router.post('/', function(req, res, next){
         {email: req.body.email},
         {$set: req.body}, function(err){
           console.log(err);
+          res.redirect('/show');
         }
       );
     })
 
   }
 
-  res.redirect('/show');
 })
 
 

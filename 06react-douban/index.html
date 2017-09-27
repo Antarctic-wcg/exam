@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/react/15.6.1/react.min.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.min.js"></script>
+  <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+  class Hello extends React.Component{
+    constructor(props){
+      super(props);
+      this.state = {username: '', lastGistUrl: ''};
+    }
+    componentWillMount(){
+    }
+    render(){
+      return(
+        <div>
+        <h1>Hi, {this.state.username}!</h1>
+        <a href={this.state.lastGistUrl}> click here !</a>
+        </div>
+      )
+    }
+    componentDidMount(){
+      let head = new Headers({
+        'Access-Control-Allow-Origin': '*'
+      });
+      var myRequest = new Request('https://api.douban.com/v2/movie/in_theaters');
+      fetch(myRequest, {mode: 'no-cors', method:'get', headers: head}).then(function(response) {
+        console.log("1",response);
+        return response.json();
+      }).then(function(data) {
+        console.log("2");
+        console.log(data);
+      }).catch(function(e) {
+        console.log("Oops, error");
+      });
+    }
+  }
+    ReactDOM.render(<Hello source='https://api.douban.com/v2/movie/in_theaters'/>, document.getElementById('root'));
+  </script>
+</body>
+</html>
